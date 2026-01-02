@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ScrollReveal } from "../animations/ScrollReveal";
 import { ChevronShape } from "../icons/IconShapes";
+import { Download } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -52,10 +53,13 @@ const HeroSection = () => {
           transition={{ duration: 0.5, delay: 0.7 }}
         >
           <a
-            href="#projects"
-            className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold text-lg min-h-[56px] sm:min-w-[210px] bg-accent-lime text-text-black hover-lift"
+            href="https://drive.google.com/drive/folders/1BxqFKCncB7ur_VuDJs0WKVcUASqlawsu?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 font-semibold text-lg min-h-[56px] sm:min-w-[210px] bg-accent-lime text-text-black hover-lift"
           >
-            View My Work
+            <Download className="w-5 h-5" />
+            Download Resume
           </a>
 
           {/* Mouse indicator (between CTAs on desktop) */}
@@ -82,12 +86,17 @@ const HeroSection = () => {
       <div className="flex justify-center items-end gap-0 -mb-1">
         {/* Code - Circle Periwinkle */}
         <motion.div
-          className="icon-tile icon-tile-circle bg-accent-periwinkle w-[18vw] h-[18vw] max-w-[280px] max-h-[280px] min-w-[100px] min-h-[100px]"
+          className="icon-tile icon-tile-circle bg-accent-periwinkle w-[18vw] h-[18vw] max-w-[280px] max-h-[280px] min-w-[100px] min-h-[100px] cursor-pointer group relative overflow-hidden"
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
+          whileHover={{ scale: 1.05, rotate: 5 }}
+          whileTap={{ scale: 0.95 }}
         >
-          <svg viewBox="0 0 64 64" fill="none" className="w-1/2 h-1/2">
+          {/* Texture overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.2),transparent_70%)]" />
+          <svg viewBox="0 0 64 64" fill="none" className="w-1/2 h-1/2 relative z-10 group-hover:scale-110 transition-transform duration-300">
             <path d="M24 20L12 32L24 44" stroke="hsl(var(--text-black))" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
             <path d="M40 20L52 32L40 44" stroke="hsl(var(--text-black))" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
@@ -95,12 +104,16 @@ const HeroSection = () => {
 
         {/* Design - Rounded Square Green */}
         <motion.div
-          className="icon-tile icon-tile-square bg-icon-green w-[18vw] h-[18vw] max-w-[280px] max-h-[280px] min-w-[100px] min-h-[100px] -ml-2"
+          className="icon-tile icon-tile-square bg-icon-green w-[18vw] h-[18vw] max-w-[280px] max-h-[280px] min-w-[100px] min-h-[100px] -ml-3 cursor-pointer group relative overflow-hidden"
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.9 }}
+          whileHover={{ scale: 1.05, rotate: -5 }}
+          whileTap={{ scale: 0.95 }}
         >
-          <svg viewBox="0 0 64 64" fill="none" className="w-1/2 h-1/2">
+          <div className="absolute inset-0 bg-gradient-to-tl from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.15),transparent_60%)]" />
+          <svg viewBox="0 0 64 64" fill="none" className="w-1/2 h-1/2 relative z-10 group-hover:scale-110 transition-transform duration-300">
             <circle cx="32" cy="24" r="8" stroke="hsl(var(--text-black))" strokeWidth="4" fill="none" />
             <path d="M16 52C16 43.163 23.163 36 32 36C40.837 36 48 43.163 48 52" stroke="hsl(var(--text-black))" strokeWidth="4" strokeLinecap="round" />
           </svg>
@@ -108,15 +121,24 @@ const HeroSection = () => {
 
         {/* Creative - Hexagon Orange */}
         <motion.div
-          className="relative w-[20vw] h-[20vw] max-w-[300px] max-h-[300px] min-w-[110px] min-h-[110px] -ml-2 flex items-center justify-center"
+          className="relative w-[20vw] h-[20vw] max-w-[300px] max-h-[300px] min-w-[110px] min-h-[110px] -ml-3 flex items-center justify-center cursor-pointer group"
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 1 }}
+          whileHover={{ scale: 1.08, rotate: 10 }}
+          whileTap={{ scale: 0.95 }}
         >
-          <svg viewBox="0 0 100 100" fill="none" className="w-full h-full absolute">
-            <path d="M25 10H75L95 50L75 90H25L5 50L25 10Z" fill="hsl(var(--accent-orange))" />
+          <svg viewBox="0 0 100 100" fill="none" className="w-full h-full absolute group-hover:drop-shadow-2xl transition-all duration-300">
+            <defs>
+              <linearGradient id="hexGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="hsl(var(--accent-orange))" />
+                <stop offset="100%" stopColor="hsl(var(--accent-orange))" stopOpacity="0.8" />
+              </linearGradient>
+            </defs>
+            <path d="M25 10H75L95 50L75 90H25L5 50L25 10Z" fill="url(#hexGrad)" />
           </svg>
-          <svg viewBox="0 0 64 64" fill="none" className="w-2/5 h-2/5 relative z-10">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_70%)] opacity-50" />
+          <svg viewBox="0 0 64 64" fill="none" className="w-2/5 h-2/5 relative z-10 group-hover:scale-110 transition-transform duration-300">
             <path d="M32 8L8 20V44L32 56L56 44V20L32 8Z" stroke="hsl(var(--text-black))" strokeWidth="3" fill="none" />
             <circle cx="32" cy="32" r="8" fill="hsl(var(--text-black))" />
           </svg>
@@ -124,12 +146,16 @@ const HeroSection = () => {
 
         {/* Mobile - Rounded Square Yellow */}
         <motion.div
-          className="icon-tile icon-tile-square bg-icon-yellow w-[18vw] h-[18vw] max-w-[280px] max-h-[280px] min-w-[100px] min-h-[100px] -ml-2"
+          className="icon-tile icon-tile-square bg-icon-yellow w-[18vw] h-[18vw] max-w-[280px] max-h-[280px] min-w-[100px] min-h-[100px] -ml-3 cursor-pointer group relative overflow-hidden"
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.1 }}
+          whileHover={{ scale: 1.05, rotate: 5 }}
+          whileTap={{ scale: 0.95 }}
         >
-          <svg viewBox="0 0 64 64" fill="none" className="w-1/2 h-1/2">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,255,255,0.2),transparent_65%)]" />
+          <svg viewBox="0 0 64 64" fill="none" className="w-1/2 h-1/2 relative z-10 group-hover:scale-110 transition-transform duration-300">
             <rect x="18" y="8" width="28" height="48" rx="4" stroke="hsl(var(--text-black))" strokeWidth="3" fill="none" />
             <circle cx="32" cy="48" r="3" fill="hsl(var(--text-black))" />
           </svg>
@@ -137,12 +163,16 @@ const HeroSection = () => {
 
         {/* Web - Circle Blue */}
         <motion.div
-          className="icon-tile icon-tile-circle bg-icon-blue w-[18vw] h-[18vw] max-w-[280px] max-h-[280px] min-w-[100px] min-h-[100px] -ml-2"
+          className="icon-tile icon-tile-circle bg-icon-blue w-[18vw] h-[18vw] max-w-[280px] max-h-[280px] min-w-[100px] min-h-[100px] -ml-3 cursor-pointer group relative overflow-hidden"
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.2 }}
+          whileHover={{ scale: 1.05, rotate: -5 }}
+          whileTap={{ scale: 0.95 }}
         >
-          <svg viewBox="0 0 64 64" fill="none" className="w-1/2 h-1/2">
+          <div className="absolute inset-0 bg-gradient-to-tl from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.15),transparent_70%)]" />
+          <svg viewBox="0 0 64 64" fill="none" className="w-1/2 h-1/2 relative z-10 group-hover:scale-110 transition-transform duration-300">
             <circle cx="32" cy="32" r="20" stroke="hsl(var(--text-black))" strokeWidth="3" fill="none" />
             <ellipse cx="32" cy="32" rx="8" ry="20" stroke="hsl(var(--text-black))" strokeWidth="3" fill="none" />
             <path d="M12 32H52" stroke="hsl(var(--text-black))" strokeWidth="3" />

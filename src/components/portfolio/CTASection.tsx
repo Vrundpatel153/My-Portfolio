@@ -39,7 +39,9 @@ const CTASection = () => {
               <ArrowRight className="w-5 h-5" />
             </a>
             <a
-              href="#"
+              href="https://drive.google.com/drive/folders/1BxqFKCncB7ur_VuDJs0WKVcUASqlawsu?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-cream inline-flex items-center justify-center gap-2"
             >
               <Download className="w-5 h-5" />

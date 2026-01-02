@@ -111,9 +111,18 @@ const ProjectsSection = () => {
                       <div className="w-2 h-2 rounded-full bg-green-400" />
                     </div>
                     <div className="bg-muted rounded-md flex-1 min-h-[160px] relative overflow-hidden">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-10 h-10 rounded bg-stroke-charcoal/20" />
-                      </div>
+                      {!project.imageFile && (
+                        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-stroke-charcoal/40 to-stroke-charcoal/20">
+                          <div className="text-center px-4">
+                            <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-accent-lime/20 flex items-center justify-center">
+                              <svg className="w-8 h-8 text-accent-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                              </svg>
+                            </div>
+                            <div className="text-text-black/60 text-lg font-bold">Coming Soon</div>
+                          </div>
+                        </div>
+                      )}
                       {project.imageFile ? (
                         <img
                           src={mediaCandidatesFor(project.imageFile)[0]}
