@@ -2,32 +2,25 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from "../animations/Scrol
 
 const experiences = [
   {
-    period: "2022 - Present",
-    role: "Senior Full-Stack Developer",
-    company: "TechCorp Inc.",
-    description: "Leading development of enterprise-scale applications, mentoring junior developers, and architecting scalable solutions.",
+    period: "2026 - Present",
+    role: "Automation Support Team Lead (Assistant)",
+    company: "Young Hustler's University (Skool community)",
+    description: "Supporting the automation team by triaging issues, improving workflows, and helping deliver reliable process automation for community operations.",
     color: "bg-accent-periwinkle",
   },
   {
-    period: "2020 - 2022",
-    role: "Frontend Lead",
-    company: "StartupHub",
-    description: "Built and maintained multiple client-facing applications, improved performance by 40%, and established coding standards.",
+    period: "Apr 2025 - Jul 2025",
+    role: "Full-Stack Developer Intern",
+    company: "Tilak Industries",
+    description: "Contributed to a Bank Management System, building full-stack features and improving data flows and UI for day-to-day operations.",
     color: "bg-icon-green",
   },
   {
-    period: "2018 - 2020",
-    role: "UI/UX Developer",
-    company: "DesignStudio",
-    description: "Collaborated with designers to implement pixel-perfect interfaces and created reusable component libraries.",
+    period: "2024 - 2025",
+    role: "Freelance Developer",
+    company: "Self-employed",
+    description: "Worked with 10+ clients, delivering responsive websites and web applications end-to-end—from requirements to deployment and iteration.",
     color: "bg-accent-orange",
-  },
-  {
-    period: "2016 - 2018",
-    role: "Junior Developer",
-    company: "WebAgency",
-    description: "Started my journey building responsive websites and learning modern JavaScript frameworks.",
-    color: "bg-icon-yellow",
   },
 ];
 

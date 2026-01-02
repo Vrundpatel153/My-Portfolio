@@ -1,5 +1,5 @@
 import { ScrollReveal, StaggerContainer, StaggerItem } from "../animations/ScrollReveal";
-import { Mail, MapPin, Phone, Send, Linkedin, Github, Twitter } from "lucide-react";
+import { Mail, MapPin, Phone, Send, Linkedin, Github } from "lucide-react";
 
 const ContactSection = () => {
   return (
@@ -29,13 +29,13 @@ const ContactSection = () => {
 
               <StaggerContainer className="space-y-4 mb-8" staggerDelay={0.1}>
                 <StaggerItem>
-                  <a href="mailto:hello@alexmorgan.dev" className="flex items-center gap-4 text-text-black hover:text-accent-orange transition-colors">
+                  <a href="mailto:vrundpatel153@gmail.com" className="flex items-center gap-4 text-text-black hover:text-accent-orange transition-colors">
                     <div className="w-12 h-12 bg-accent-orange rounded-xl flex items-center justify-center">
                       <Mail className="w-5 h-5 text-text-black" />
                     </div>
                     <div>
                       <p className="text-sm text-text-black/50">Email</p>
-                      <p className="font-semibold">hello@alexmorgan.dev</p>
+                      <p className="font-semibold">vrundpatel153@gmail.com</p>
                     </div>
                   </a>
                 </StaggerItem>
@@ -68,14 +68,21 @@ const ContactSection = () => {
               {/* Social Links */}
               <ScrollReveal delay={0.4}>
                 <div className="flex gap-4">
-                  <a href="#" className="w-12 h-12 bg-stroke-charcoal rounded-xl flex items-center justify-center text-panel-cream hover:bg-accent-lime hover:text-text-black transition-colors">
+                  <a
+                    href="https://www.linkedin.com/in/vrund-patel-73a239284"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-12 h-12 bg-stroke-charcoal rounded-xl flex items-center justify-center text-panel-cream hover:bg-accent-lime hover:text-text-black transition-colors"
+                  >
                     <Linkedin className="w-5 h-5" />
                   </a>
-                  <a href="#" className="w-12 h-12 bg-stroke-charcoal rounded-xl flex items-center justify-center text-panel-cream hover:bg-accent-lime hover:text-text-black transition-colors">
+                  <a
+                    href="https://github.com/Vrundpatel153"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-12 h-12 bg-stroke-charcoal rounded-xl flex items-center justify-center text-panel-cream hover:bg-accent-lime hover:text-text-black transition-colors"
+                  >
                     <Github className="w-5 h-5" />
-                  </a>
-                  <a href="#" className="w-12 h-12 bg-stroke-charcoal rounded-xl flex items-center justify-center text-panel-cream hover:bg-accent-lime hover:text-text-black transition-colors">
-                    <Twitter className="w-5 h-5" />
                   </a>
                 </div>
               </ScrollReveal>

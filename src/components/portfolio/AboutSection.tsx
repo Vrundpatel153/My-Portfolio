@@ -2,10 +2,11 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from "../animations/Scrol
 
 const AboutSection = () => {
   const stats = [
-    { number: "8+", label: "Years Experience" },
-    { number: "150+", label: "Projects Completed" },
-    { number: "50+", label: "Happy Clients" },
-    { number: "12", label: "Awards Won" },
+    { number: "1", label: "Year Experience" },
+    { number: "150+", label: "Problems Solved" },
+    { number: "50+", label: "Projects Completed" },
+    { number: "10+", label: "Happy Clients" },
+    { number: "2", label: "Medals Won" },
   ];
 
   return (
@@ -23,26 +24,44 @@ const AboutSection = () => {
             <div className="lg:col-span-3">
               <ScrollReveal>
                 <h2 className="bento-headline text-text-black mb-8">
-                  Crafting digital<br />
-                  experiences that<br />
-                  <span className="text-accent-periwinkle">inspire</span>
+                  Building scalable<br />
+                  web products that<br />
+                  <span className="text-accent-periwinkle">ship</span>
                 </h2>
               </ScrollReveal>
 
               <ScrollReveal delay={0.1}>
-                <p className="text-text-black/80 text-base md:text-lg mb-6 max-w-lg">
-                  I'm a full-stack developer and designer based in San Francisco with a passion for creating beautiful, functional, and user-centered digital experiences.
+                <p className="text-text-black/80 text-base md:text-lg mb-6 max-w-lg text-justify leading-relaxed">
+                  I&apos;m a{" "}
+                  <span className="font-semibold text-accent-orange">Full-Stack Developer</span>{" "}
+                  focused on building{" "}
+                  <span className="font-semibold text-accent-lime">scalable web applications</span>, solving problems end-to-end across frontend, backend, and deployment.
                 </p>
               </ScrollReveal>
 
               <ScrollReveal delay={0.2}>
-                <p className="text-text-black/80 text-base md:text-lg mb-8 max-w-lg">
-                  With over 8 years of experience in the industry, I've worked with startups, agencies, and Fortune 500 companies to bring their visions to life.
+                <p className="text-text-black/80 text-base md:text-lg mb-6 max-w-lg text-justify leading-relaxed">
+                  I work with{" "}
+                  <span className="font-semibold text-accent-periwinkle">React</span>,{" "}
+                  <span className="font-semibold text-accent-periwinkle">Next.js</span>,{" "}
+                  <span className="font-semibold text-accent-periwinkle">TypeScript</span>, and modern databases, and I&apos;m expanding into{" "}
+                  <span className="font-semibold text-accent-orange">AI-powered solutions</span>{" "}
+                  using{" "}
+                  <span className="font-semibold text-accent-orange">Generative AI</span> and{" "}
+                  <span className="font-semibold text-accent-orange">LangChain</span>, supported by cloud and DevOps fundamentals for real-world production systems.
+                </p>
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.3}>
+                <p className="text-text-black/70 text-base md:text-lg mb-10 max-w-lg text-justify leading-relaxed">
+                  Currently in my{" "}
+                  <span className="font-semibold text-text-black">3rd year</span> of B.Tech in Computer Engineering at{" "}
+                  <span className="font-semibold text-text-black">Charotar University of Science and Technology (CHARUSAT)</span>.
                 </p>
               </ScrollReveal>
 
               {/* Stats */}
-              <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <StaggerContainer className="grid grid-cols-2 md:grid-cols-5 gap-6">
                 {stats.map((stat) => (
                   <StaggerItem key={stat.label}>
                     <div className="text-center md:text-left">

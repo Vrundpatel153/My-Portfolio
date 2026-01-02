@@ -1,11 +1,18 @@
 import { motion } from "framer-motion";
 import { ScrollReveal } from "../animations/ScrollReveal";
+import { ChevronShape } from "../icons/IconShapes";
 
 const HeroSection = () => {
   return (
     <section className="min-h-screen bg-bg-dark relative flex flex-col justify-center pt-24 pb-0 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-accent-periwinkle/5 to-transparent pointer-events-none" />
+
+      {/* Top-right decorative chevrons (behind navbar) */}
+      <div className="absolute top-0 right-0 pointer-events-none z-0">
+        <ChevronShape className="absolute -top-10 -right-6 w-44 md:w-56 h-auto text-accent-orange/60" />
+        <ChevronShape className="absolute top-14 -right-16 w-52 md:w-64 h-auto text-accent-periwinkle/70" />
+      </div>
       
       {/* Main Content */}
       <div className="container mx-auto px-4 text-center flex-1 flex flex-col justify-center relative z-10">
@@ -24,8 +31,8 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
-          Hi, I'm Alex<br />
-          <span className="text-accent-periwinkle">Morgan</span>
+          Hi, I'm Vrund<br />
+          <span className="text-accent-periwinkle">Patel</span>
         </motion.h1>
 
         <motion.p
@@ -39,29 +46,35 @@ const HeroSection = () => {
 
         {/* CTA Buttons */}
         <motion.div
-          className="flex flex-col sm:flex-row justify-center gap-4 mb-16"
+          className="flex flex-col sm:flex-row justify-center items-stretch gap-4 mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.7 }}
         >
-          <a href="#projects" className="bg-accent-lime text-text-black rounded-full px-8 py-4 font-semibold text-lg hover-lift">
+          <a
+            href="#projects"
+            className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold text-lg min-h-[56px] sm:min-w-[210px] bg-accent-lime text-text-black hover-lift"
+          >
             View My Work
           </a>
-          <a href="#contact" className="btn-cream">
+
+          {/* Mouse indicator (between CTAs on desktop) */}
+          <div className="hidden sm:flex items-center justify-center px-2">
+            <div className="w-7 h-11 border-2 border-panel-cream/40 rounded-full flex items-start justify-center pt-2">
+              <motion.div
+                className="w-1.5 h-1.5 bg-panel-cream/70 rounded-full"
+                animate={{ y: [0, 14, 0], opacity: [0.2, 1, 0.2] }}
+                transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
+              />
+            </div>
+          </div>
+
+          <a
+            href="#contact"
+            className="inline-flex items-center justify-center rounded-full px-8 py-4 font-semibold text-lg min-h-[56px] sm:min-w-[210px] btn-cream"
+          >
             Get In Touch
           </a>
-        </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 10, 0] }}
-          transition={{ duration: 1.5, delay: 1, repeat: Infinity }}
-        >
-          <div className="w-6 h-10 border-2 border-panel-cream/40 rounded-full flex justify-center pt-2">
-            <div className="w-1.5 h-3 bg-panel-cream/60 rounded-full" />
-          </div>
         </motion.div>
       </div>
 

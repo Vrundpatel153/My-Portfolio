@@ -1,41 +1,41 @@
 import { ScrollReveal, StaggerContainer, StaggerItem } from "../animations/ScrollReveal";
-import { Code, Palette, Smartphone, Globe, Zap, Shield } from "lucide-react";
+import { Brain, Code, Database, Layout, Rocket, Server } from "lucide-react";
 
 const services = [
   {
     icon: Code,
-    title: "Web Development",
-    description: "Building fast, scalable web applications with modern technologies like React, Next.js, and Node.js.",
+    title: "Full-Stack Web Apps",
+    description: "End-to-end web applications with React/Next.js, TypeScript, and scalable backend patterns—built for real production use.",
     color: "bg-accent-periwinkle",
   },
   {
-    icon: Palette,
-    title: "UI/UX Design",
-    description: "Creating intuitive, beautiful interfaces that users love. From wireframes to high-fidelity prototypes.",
+    icon: Layout,
+    title: "Frontend & UI Engineering",
+    description: "Responsive, accessible interfaces with clean component architecture, great UX, and performance-focused implementation.",
     color: "bg-accent-orange",
   },
   {
-    icon: Smartphone,
-    title: "Mobile Apps",
-    description: "Cross-platform mobile development with React Native for iOS and Android applications.",
+    icon: Server,
+    title: "APIs & Backend Systems",
+    description: "REST APIs, authentication flows, and reliable server-side logic—designed for maintainability and clean data contracts.",
     color: "bg-icon-green",
   },
   {
-    icon: Globe,
-    title: "E-Commerce",
-    description: "Full-featured online stores with payment integration, inventory management, and analytics.",
+    icon: Database,
+    title: "Databases & Data Modeling",
+    description: "PostgreSQL-focused schemas, querying, and optimization with a practical approach to data integrity and analytics-ready structures.",
     color: "bg-icon-blue",
   },
   {
-    icon: Zap,
-    title: "Performance",
-    description: "Speed optimization, SEO improvements, and Core Web Vitals enhancement for better rankings.",
+    icon: Brain,
+    title: "GenAI Features (Learning + Build)",
+    description: "Adding AI-powered capabilities using Generative AI concepts and LangChain experimentation—grounded in real product workflows.",
     color: "bg-accent-lime",
   },
   {
-    icon: Shield,
-    title: "Consulting",
-    description: "Technical consulting, code reviews, and architecture planning for your digital projects.",
+    icon: Rocket,
+    title: "Deployment & DevOps Basics",
+    description: "From local to production: Git workflows, Docker fundamentals, cloud deployments, and CI/CD concepts applied in practice.",
     color: "bg-icon-yellow",
   },
 ];

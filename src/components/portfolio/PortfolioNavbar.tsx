@@ -25,7 +25,7 @@ const PortfolioNavbar = () => {
         <a href="#" className="w-10 h-10 flex-shrink-0">
           <svg viewBox="0 0 40 40" fill="none" className="w-full h-full">
             <rect width="40" height="40" rx="8" fill="hsl(var(--accent-orange))" />
-            <text x="12" y="28" fill="hsl(var(--text-black))" fontWeight="900" fontSize="20" fontFamily="Poppins">A</text>
+            <text x="12" y="28" fill="hsl(var(--text-black))" fontWeight="900" fontSize="20" fontFamily="Poppins">V</text>
           </svg>
         </a>
 
