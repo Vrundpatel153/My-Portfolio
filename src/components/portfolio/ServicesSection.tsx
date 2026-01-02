@@ -76,7 +76,7 @@ const ServicesSection = () => {
         </StaggerContainer>
 
         {/* CTA */}
-        <ScrollReveal className="text-center mt-16">
+        <ScrollReveal className="text-center mt-10 md:mt-12">
           <p className="text-panel-cream/60 mb-6">Ready to start your project?</p>
           <a href="#contact" className="btn-lime inline-block">
             Let's Talk

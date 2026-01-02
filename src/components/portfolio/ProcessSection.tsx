@@ -1,4 +1,5 @@
 import { ScrollReveal, StaggerContainer, StaggerItem } from "../animations/ScrollReveal";
+import { ChevronShape } from "../icons/IconShapes";
 
 const steps = [
   {
@@ -33,7 +34,12 @@ const steps = [
 
 const ProcessSection = () => {
   return (
-    <section className="bg-panel-cream py-20 md:py-32 px-4 overflow-hidden">
+    <section className="bg-panel-cream py-20 md:py-32 px-4 overflow-hidden relative">
+      {/* Subtle background accents */}
+      <div className="absolute top-0 right-0 pointer-events-none opacity-15">
+        <ChevronShape className="absolute -top-24 -right-20 w-64 md:w-80 h-auto text-accent-orange/60" />
+        <ChevronShape className="absolute top-28 -right-28 w-72 md:w-96 h-auto text-accent-periwinkle/50" />
+      </div>
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -62,14 +68,23 @@ const ProcessSection = () => {
               <div className="relative">
                 {/* Connector Line */}
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-stroke-charcoal/20 -translate-x-4" />
+                  <div className="hidden lg:flex absolute top-12 left-full w-full -translate-x-4 items-center gap-3">
+                    <span className="w-2.5 h-2.5 rounded-full bg-panel-cream border-2 border-stroke-charcoal/20" />
+                    <div className="flex-1 h-0.5 rounded-full bg-gradient-to-r from-stroke-charcoal/10 via-stroke-charcoal/35 to-stroke-charcoal/10" />
+                    <span className="w-3 h-3 rounded-full bg-panel-cream border-2 border-stroke-charcoal/20" />
+                  </div>
                 )}
 
                 {/* Step Card */}
-                <div className={`${step.bg} rounded-[24px] p-8 h-full`}>
-                  <span className={`${step.color} text-5xl font-black block mb-4`}>{step.number}</span>
+                <div className={`${step.bg} rounded-[24px] p-8 border-2 border-stroke-charcoal/10 hover:border-stroke-charcoal/20 transition-colors hover-lift h-full md:h-[320px] lg:h-[360px] flex flex-col`}>
+                  <div className="flex items-start justify-between mb-5">
+                    <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-panel-cream border-2 border-stroke-charcoal/10 ${step.color} text-2xl font-black`}>
+                      {step.number}
+                    </div>
+                    <div className="w-3 h-3 rounded-full bg-stroke-charcoal/20" />
+                  </div>
                   <h3 className="text-2xl font-bold text-text-black mb-3">{step.title}</h3>
-                  <p className="text-text-black/70">{step.description}</p>
+                  <p className="text-text-black/70 leading-relaxed flex-1">{step.description}</p>
                 </div>
               </div>
             </StaggerItem>

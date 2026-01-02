@@ -4,24 +4,24 @@ import { StarIcon } from "../icons/IconShapes";
 const testimonials = [
   {
     stars: 5,
-    title: "Exceptional work quality!",
-    content: "Vrund delivered beyond our expectations. The attention to detail and creative solutions transformed our product. Communication was seamless throughout the entire project.",
-    author: "Sarah Chen",
-    role: "CEO, TechStart",
+    title: "Reliable delivery and clean UI",
+    content: "Vrund helped me ship a responsive business website with a contact flow and content updates. He was clear with timelines, shared progress regularly, and delivered exactly what we discussed. The UI feels modern and loads fast.",
+    author: "Amit Patel",
+    role: "Small Business Owner (India)",
   },
   {
     stars: 5,
-    title: "A true professional.",
-    content: "Working with Vrund was an absolute pleasure. They understood our vision immediately and translated it into a beautiful, functional application. Highly recommend!",
-    author: "Michael Rodriguez",
-    role: "Product Manager, InnovateCo",
+    title: "Strong full-stack fundamentals",
+    content: "During his internship at Tilak Industries, Vrund contributed to our bank management system modules and handled both UI and backend tasks. He learns quickly, communicates well, and is dependable when it comes to fixing issues and completing features.",
+    author: "Tilak Patel",
+    role: "Tilak Industries",
   },
   {
     stars: 5,
-    title: "Outstanding developer!",
-    content: "Vrund's technical skills are matched only by their design sensibility. Our website performance improved dramatically, and the UI is stunning. Will definitely work together again.",
-    author: "Emily Watson",
-    role: "Founder, DesignLab",
+    title: "Great communication and support",
+    content: "Vrund has been a huge help in our Skool community automation support. He communicates clearly, follows up fast, and keeps things organized when troubleshooting automation issues. Super reliable and easy to work with.",
+    author: "Jason Tabinas",
+    role: "Community Ops (Switzerland) — Skool",
   },
 ];
 

@@ -1,54 +1,85 @@
 import { ScrollReveal, StaggerContainer, StaggerItem } from "../animations/ScrollReveal";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, X } from "lucide-react";
+import { ChevronShape } from "../icons/IconShapes";
+import { useState } from "react";
+
+const mediaCandidatesFor = (fileName: string) => {
+  const baseUrl = import.meta.env.BASE_URL;
+  const candidates = [`${baseUrl}media/${encodeURIComponent(fileName)}`];
+
+  const match = fileName.match(/^(.*)\.(png|jpg|jpeg|webp)$/i);
+  if (match) {
+    const base = match[1];
+    const exts = ["png", "jpg", "jpeg", "webp"];
+    for (const ext of exts) {
+      candidates.push(`${baseUrl}media/${encodeURIComponent(`${base}.${ext}`)}`);
+    }
+  }
+
+  return candidates;
+};
 
 const projects = [
   {
-    title: "Fintech Dashboard",
-    description: "A comprehensive financial analytics platform with real-time data visualization and AI-powered insights.",
-    tags: ["React", "TypeScript", "D3.js", "Node.js"],
+    title: "Virtual AI Assistant with AI Tools",
+    description: "Build an AI Assistant platform with 3D models, beautiful animation and unique design. Integrated Chat + Voice assistants using OpenAI and created AI agents for multiple tasks. Leveraged trained models to build efficient agents, history and chat management.",
+    tags: ["TypeScript", "React.js", "Tailwind CSS", "Three.js", "Node.js", "Supabase"],
     color: "bg-accent-periwinkle",
     featured: true,
+    imageFile: "ai.png",
+    imageAlt: "Virtual AI Assistant with AI Tools screenshot",
   },
   {
-    title: "E-Commerce Platform",
-    description: "Full-stack shopping experience with cart management, payment processing, and inventory system.",
-    tags: ["Next.js", "Stripe", "PostgreSQL"],
+    title: "Expense Management System @OdooHackathon",
+    description: "Smart, auditable expense reimbursement with configurable multi-level approvals. Production-grade MERN + TypeScript implementation — frontend polished to match Excalidraw mocks, backend implements deterministic approval engine, OCR, exchange rates, admin tooling, and audit trails.",
+    tags: ["MERN", "TypeScript", "Tailwind CSS", "Tesseract"],
     color: "bg-icon-green",
     featured: true,
+    imageFile: "hackathon.png",
+    imageAlt: "Expense Management System screenshot",
   },
   {
-    title: "Health & Wellness App",
-    description: "Mobile-first application for tracking fitness goals, nutrition, and mental wellness.",
-    tags: ["React Native", "Firebase", "ML Kit"],
+    title: "Expense Tracker",
+    description: "Designed a full stack Expense Tracker with beautiful design and fully responsive structure. Advances tracking expenses using various perspectives of user's expenses along with graph visualization. Multiple features which includes Set reminders, chat with bot, export data, manage history.",
+    tags: ["TypeScript", "React.js", "Tailwind CSS", "Three.js", "MongoDB", "Node.js"],
     color: "bg-accent-orange",
     featured: false,
+    imageFile: "expense.png",
+    imageAlt: "Expense Tracker screenshot",
   },
   {
-    title: "Real Estate Portal",
-    description: "Property listing platform with virtual tours, map integration, and smart search filters.",
-    tags: ["Vue.js", "Mapbox", "Express"],
+    title: "Database-Backed Web App",
+    description: "Web app with structured data modeling, filtering, and reliable querying for real-world datasets.",
+    tags: ["PostgreSQL", "SQL", "TypeScript", "Data"],
     color: "bg-icon-yellow",
     featured: false,
   },
   {
-    title: "AI Content Studio",
-    description: "Creative platform leveraging AI for content generation, image editing, and brand assets.",
-    tags: ["Python", "OpenAI", "React"],
+    title: "GenAI Assistant Prototype",
+    description: "Prototype exploring LLM-based features like prompt workflows and retrieval patterns using LangChain experiments.",
+    tags: ["Generative AI", "LangChain", "Python", "Prompting"],
     color: "bg-icon-blue",
     featured: true,
   },
   {
-    title: "Team Collaboration Tool",
-    description: "Real-time workspace with video conferencing, file sharing, and project management features.",
-    tags: ["WebRTC", "Socket.io", "MongoDB"],
+    title: "Automation Support Toolkit",
+    description: "Tools and workflows to triage automation issues faster, improve reliability, and keep operations organized.",
+    tags: ["Automation", "Debugging", "Process", "Support"],
     color: "bg-accent-lime",
     featured: false,
   },
 ];
 
 const ProjectsSection = () => {
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
+
   return (
-    <section id="projects" className="bg-bg-dark py-20 md:py-32 px-4">
+    <section id="projects" className="bg-bg-dark pt-10 md:pt-12 pb-20 md:pb-32 px-4 relative overflow-hidden">
+      {/* Subtle background accents */}
+      <div className="absolute top-0 right-0 pointer-events-none opacity-30">
+        <ChevronShape className="absolute -top-16 -right-10 w-52 md:w-64 h-auto text-accent-periwinkle/40" />
+        <ChevronShape className="absolute top-10 -right-24 w-60 md:w-72 h-auto text-accent-orange/30" />
+      </div>
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -69,18 +100,44 @@ const ProjectsSection = () => {
             <StaggerItem key={project.title}>
               <div className={`group relative rounded-[24px] overflow-hidden border-2 border-stroke-charcoal hover-lift ${project.featured ? 'md:col-span-1' : ''}`}>
                 {/* Project Preview */}
-                <div className={`${project.color} aspect-[4/3] p-6 flex items-end`}>
+                <div className={`${project.color} aspect-[4/3] p-6 flex items-stretch`}>
                   <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
                   {/* Mock Browser Frame */}
-                  <div className="w-full bg-panel-cream rounded-lg p-2 relative z-10">
+                  <div className="w-full h-full bg-panel-cream rounded-lg p-3 relative z-10 flex flex-col">
                     <div className="flex gap-1.5 mb-2">
                       <div className="w-2 h-2 rounded-full bg-red-400" />
                       <div className="w-2 h-2 rounded-full bg-yellow-400" />
                       <div className="w-2 h-2 rounded-full bg-green-400" />
                     </div>
-                    <div className="bg-muted rounded h-24 flex items-center justify-center">
-                      <div className="w-8 h-8 rounded bg-stroke-charcoal/20" />
+                    <div className="bg-muted rounded-md flex-1 min-h-[160px] relative overflow-hidden">
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-10 h-10 rounded bg-stroke-charcoal/20" />
+                      </div>
+                      {project.imageFile ? (
+                        <img
+                          src={mediaCandidatesFor(project.imageFile)[0]}
+                          data-attempt="0"
+                          alt={project.imageAlt ?? project.title}
+                          className="absolute inset-0 w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
+                          loading="lazy"
+                          decoding="async"
+                          onClick={() => setSelectedImage({ src: mediaCandidatesFor(project.imageFile!)[0], alt: project.imageAlt ?? project.title })}
+                          onError={(e) => {
+                            const image = e.currentTarget;
+                            const candidates = mediaCandidatesFor(project.imageFile!);
+                            const attempt = Number(image.dataset.attempt ?? "0") + 1;
+
+                            if (attempt >= candidates.length) {
+                              image.style.display = "none";
+                              return;
+                            }
+
+                            image.dataset.attempt = String(attempt);
+                            image.src = candidates[attempt];
+                          }}
+                        />
+                      ) : null}
                     </div>
                   </div>
 
@@ -120,6 +177,37 @@ const ProjectsSection = () => {
           </a>
         </ScrollReveal>
       </div>
+
+      {/* Image Preview Modal */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-300"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div 
+            className="relative max-w-7xl max-h-[90vh] w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute -top-12 right-0 md:-right-12 md:top-0 w-10 h-10 bg-panel-cream hover:bg-accent-lime rounded-full flex items-center justify-center transition-all hover:scale-110 z-10"
+              aria-label="Close image preview"
+            >
+              <X className="w-5 h-5 text-text-black" />
+            </button>
+
+            {/* Image */}
+            <div className="bg-panel-cream rounded-2xl p-4 shadow-2xl">
+              <img
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

@@ -47,7 +47,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <p className="text-sm text-text-black/50">Location</p>
-                      <p className="font-semibold">San Francisco, CA</p>
+                      <p className="font-semibold">Vadodara, Gujarat, India</p>
                     </div>
                   </div>
                 </StaggerItem>
@@ -59,7 +59,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <p className="text-sm text-text-black/50">Phone</p>
-                      <p className="font-semibold">+1 (555) 123-4567</p>
+                      <p className="font-semibold">+91 76989 79593</p>
                     </div>
                   </div>
                 </StaggerItem>
