@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+@layer base {
+  :root {
+    /* Core brand colors - exact hex converted to HSL */
+    --bg-dark: 240 4% 6%;
+    --panel-cream: 36 47% 96%;
+    --accent-periwinkle: 244 100% 73%;
+    --accent-orange: 15 100% 62%;
+    --accent-lime: 78 100% 61%;
+    --icon-green: 155 100% 33%;
+    --icon-yellow: 42 100% 61%;
+    --icon-blue: 220 100% 65%;
+    --stroke-charcoal: 0 0% 12%;
+    --text-black: 0 0% 4%;
+    
+    /* Shadcn semantic tokens mapped to brand */
+    --background: var(--bg-dark);
+    --foreground: var(--panel-cream);
+    
+    --card: var(--panel-cream);
+    --card-foreground: var(--text-black);
+    
+    --popover: var(--panel-cream);
+    --popover-foreground: var(--text-black);
+    
+    --primary: var(--accent-lime);
+    --primary-foreground: var(--text-black);
+    
+    --secondary: var(--accent-periwinkle);
+    --secondary-foreground: var(--panel-cream);
+    
+    --muted: var(--stroke-charcoal);
+    --muted-foreground: 0 0% 70%;
+    
+    --accent: var(--accent-orange);
+    --accent-foreground: var(--text-black);
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: var(--panel-cream);
+    
+    --border: var(--stroke-charcoal);
+    --input: var(--stroke-charcoal);
+    --ring: var(--accent-lime);
+    
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: var(--bg-dark);
+    --foreground: var(--panel-cream);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-poppins antialiased;
+  }
+}
+
+@layer components {
+  /* Hero headline scale */
+  .hero-headline {
+    @apply text-[12vw] md:text-[10vw] lg:text-[9vw] font-black leading-[0.9] tracking-[-0.02em];
+  }
+  
+  .section-headline {
+    @apply text-[8vw] md:text-[6vw] lg:text-[5vw] font-black leading-[0.95] tracking-[-0.02em];
+  }
+  
+  .bento-headline {
+    @apply text-[7vw] md:text-[5vw] lg:text-[4vw] font-black leading-[0.95] tracking-[-0.02em];
+  }
+  
+  /* Bento card styling */
+  .bento-card {
+    @apply bg-panel-cream rounded-[24px] md:rounded-[48px] border-2 border-stroke-charcoal p-8 md:p-12 lg:p-16;
+  }
+  
+  /* Nav pill */
+  .nav-pill {
+    @apply bg-stroke-charcoal rounded-full px-2 py-2 flex items-center gap-1 border-4 border-stroke-charcoal shadow-[inset_0_2px_4px_rgba(0,0,0,0.3)];
+  }
+  
+  /* Icon tile shapes */
+  .icon-tile {
+    @apply flex items-center justify-center p-6 md:p-8;
+  }
+  
+  .icon-tile-circle {
+    @apply rounded-full;
+  }
+  
+  .icon-tile-square {
+    @apply rounded-[24px] md:rounded-[32px];
+  }
+  
+  /* Chevron decorative shapes */
+  .chevron-shape {
+    @apply absolute;
+  }
+  
+  /* Button variants */
+  .btn-lime {
+    @apply bg-bg-dark text-accent-lime border-2 border-accent-lime rounded-full px-6 py-3 font-semibold 
+           hover:bg-accent-lime hover:text-bg-dark transition-all duration-200 hover:-translate-y-1 hover:shadow-lg;
+  }
+  
+  .btn-cream {
+    @apply bg-panel-cream text-text-black border-2 border-stroke-charcoal rounded-full px-6 py-3 font-semibold
+           hover:bg-text-black hover:text-panel-cream transition-all duration-200;
+  }
+  
+  /* Chip styles */
+  .chip-orange {
+    @apply bg-accent-orange text-text-black border-2 border-stroke-charcoal rounded-lg px-3 py-1 font-semibold text-sm inline-flex items-center gap-2;
+  }
+  
+  .chip-lime {
+    @apply bg-accent-lime text-text-black rounded-lg px-3 py-1.5 font-bold text-sm inline-flex items-center gap-2;
+  }
+  
+  /* Review card */
+  .review-card {
+    @apply text-center px-4 md:px-8;
+  }
+  
+  /* Hover lift effect */
+  .hover-lift {
+    @apply transition-all duration-200 hover:-translate-y-1 hover:shadow-xl;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
